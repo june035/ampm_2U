@@ -4,6 +4,11 @@ SHOW TABLES;
 
 DESC content;
 
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM brand;
+ALTER TABLE brand AUTO_INCREMENT = 1;
+SET SQL_SAFE_UPDATES = 1;
+
 SELECT * FROM brand;
 SELECT * FROM comment LIMIT 5;
 SELECT * FROM content LIMIT 5;
@@ -22,8 +27,8 @@ CONVERT TO CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 
 SET SQL_SAFE_UPDATES = 0;
-DELETE FROM content;
-ALTER TABLE content AUTO_INCREMENT = 1;
+DELETE FROM platform;
+ALTER TABLE platform AUTO_INCREMENT = 1;
 SET SQL_SAFE_UPDATES = 1;
 
 
@@ -44,3 +49,16 @@ FROM content C
 JOIN brand B ON B.brand_id = C.brand_id
 JOIN platform P ON P.platform_id = C.platform_id
 ORDER BY B.brand_id ASC;
+
+
+INSERT INTO brand (brand_name)
+VALUES
+('CU'),
+('다이소'),
+('올리브영');
+
+INSERT INTO platform(platform_name)
+VALUES
+('인스타그램'),
+('유튜브'),
+('네이버블로그');
