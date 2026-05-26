@@ -5,7 +5,7 @@ SHOW TABLES;
 DESC content;
 
 SELECT * FROM brand;
-SELECT * FROM comment LIMIT 5;
+SELECT * FROM comment;
 SELECT * FROM content;
 SELECT * FROM platform;
 
